@@ -17,6 +17,7 @@ function interpret(command) {
     return interpretedCommand;
 }
 
+
 // Test cases
 console.log(interpret("G()(al)")); // Output: "Goal"
 console.log(interpret("G()()()()(al)")); // Output: "Gooooal"
