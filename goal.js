@@ -1,6 +1,19 @@
+//changed the function definition
 function interpret(command) {
-    // Replace occurrences of "()" with "o" and "(al)" with "al"
-    let interpretedCommand = command.replace(/\(\)/g, 'o').replace(/\(al\)/g, 'al');
+    let interpretedCommand = '';
+    let i = 0;
+    while (i < command.length) {
+        if (command[i] === 'G') {
+            interpretedCommand += 'G';
+            i++;
+        } else if (command[i] === '(' && command[i + 1] === ')') {
+            interpretedCommand += 'o';
+            i += 2;
+        } else if (command[i] === '(' && command[i + 1] === 'a' && command[i + 2] === 'l' && command[i + 3] === ')') {
+            interpretedCommand += 'al';
+            i += 4;
+        }
+    }
     return interpretedCommand;
 }
 
